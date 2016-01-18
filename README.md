@@ -5,7 +5,7 @@ Research question: Estimate the return from direct mailing in order to maximize 
 
 Distribution of response (TARGET_B) is shown in the pie. As we can see 94% of participants showed 0 response to the direct mail and 5.1% people were the ones who responded. In order to find out how many respondents made positive donation amounts we ran a code where TARGET_D>0. 
 
-![alt tag](blob:https%3A//drive.google.com/e38f0b6e-f6d8-4882-8973-be8b0e03d8e8)
+![alt tag](https://raw.github.com/yevam/KDD-project/branch/images/Pie.jpeg)
 
 Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 1.00   10.00   12.00   14.58   20.00  100.00
