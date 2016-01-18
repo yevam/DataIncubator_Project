@@ -1,7 +1,8 @@
-Steps on Data Selection
+#Purpose: Steps on Data Selection
+#Author: Yeva Muradyan
+
 #sum(dataset$TARGET_D>0)/nrow(dataset)
 #donations = ( dataset$TARGET_D[dataset$TARGET_D>0])
-
 get_frequency <- function(categorical_variable)
 {
   freq = table(categorical_variable)/length(categorical_variable)
