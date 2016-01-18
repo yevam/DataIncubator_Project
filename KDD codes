@@ -1,0 +1,133 @@
+fial_Project
+final_dataset = feature_selection(dataset, 200)
+dim(final_dataset)
+[1] 9999   30
+> #have a look at sorted 30 variables (used entropy)
+> str(final_dataset[,1:30])
+'data.frame':	9999 obs. of  30 variables:
+ $ ETH12   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TCODE   : int  0 1 1 0 0 0 0 0 1 1 ...
+ $ ETH15   : int  0 1 0 0 0 0 0 0 0 0 ...
+ $ AFC3    : int  0 0 0 0 1 0 1 0 0 0 ...
+ $ HC15    : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TPE6    : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TARGET_D: num  0 0 0 0 0 0 0 0 0 0 ...
+ $ DW9     : int  0 0 0 2 0 0 0 0 1 0 ...
+ $ ANC15   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TARGET_B: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TPE5    : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ANC11   : int  0 0 0 3 0 0 0 0 0 0 ...
+ $ ETH11   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ AFC1    : int  0 0 0 0 1 0 1 0 0 0 ...
+ $ ETH7    : int  0 2 0 2 0 0 0 0 0 0 ...
+ $ MALEMILI: int  0 0 0 0 1 0 0 0 0 0 ...
+ $ ANC5    : int  0 1 0 0 0 0 0 0 0 0 ...
+ $ AFC2    : int  0 0 0 0 1 0 1 0 0 0 ...
+ $ ETH10   : int  0 14 0 0 0 0 0 0 0 0 ...
+ $ ANC12   : int  0 3 0 0 0 0 0 0 0 0 ...
+ $ ETH9    : int  0 4 0 0 0 0 0 0 0 0 ...
+ $ ETH8    : int  0 6 0 0 0 0 0 0 0 0 ...
+ $ ETH14   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ANC6    : int  0 1 0 0 0 0 1 0 0 0 ...
+ $ DW8     : int  7 0 3 0 0 4 14 0 2 0 ...
+ $ ETHC6   : int  0 0 0 0 19 1 0 0 0 2 ...
+ $ ETH6    : int  0 4 0 6 0 0 0 0 0 1 ...
+ $ TPE7    : int  0 0 0 0 0 0 0 0 0 1 ...
+ $ EIC2    : int  0 0 0 0 0 0 0 10 0 0 ...
+ $ HVP6    : int  0 94 0 10 0 1 0 0 0 0 ...
+> head(final_dataset[,1:30])
+  ETH12 TCODE ETH15 AFC3 HC15 TPE6 TARGET_D DW9 ANC15 TARGET_B TPE5 ANC11 ETH11 AFC1
+1     0     0     0    0    0    0        0   0     0        0    0     0     0    0
+2     0     1     1    0    0    0        0   0     0        0    0     0     0    0
+3     0     1     0    0    0    0        0   0     0        0    0     0     0    0
+4     0     0     0    0    0    0        0   2     0        0    0     3     0    0
+5     0     0     0    1    0    0        0   0     0        0    0     0     0    1
+6     0     0     0    0    0    0        0   0     0        0    0     0     0    0
+  ETH7 MALEMILI ANC5 AFC2 ETH10 ANC12 ETH9 ETH8 ETH14 ANC6 DW8 ETHC6 ETH6 TPE7 EIC2
+1    0        0    0    0     0     0    0    0     0    0   7     0    0    0    0
+2    2        0    1    0    14     3    4    6     0    1   0     0    4    0    0
+3    0        0    0    0     0     0    0    0     0    0   3     0    0    0    0
+4    2        0    0    0     0     0    0    0     0    0   0     0    6    0    0
+5    0        1    0    1     0     0    0    0     0    0   0    19    0    0    0
+6    0        0    0    0     0     0    0    0     0    0   4     1    0    0    0
+  HVP6
+1    0
+2   94
+3    0
+4   10
+5    0
+6    1summary(final_dataset[,1:10])
+     ETH12              TCODE              ETH15             AFC3        
+ Min.   : 0.00000   Min.   :    0.00   Min.   : 0.000   Min.   : 0.0000  
+ 1st Qu.: 0.00000   1st Qu.:    0.00   1st Qu.: 0.000   1st Qu.: 0.0000  
+ Median : 0.00000   Median :    1.00   Median : 0.000   Median : 0.0000  
+ Mean   : 0.05661   Mean   :   51.57   Mean   : 0.387   Mean   : 0.1475  
+ 3rd Qu.: 0.00000   3rd Qu.:    2.00   3rd Qu.: 0.000   3rd Qu.: 0.0000  
+ Max.   :72.00000   Max.   :72002.00   Max.   :78.000   Max.   :78.0000  
+      HC15               TPE6            TARGET_D            DW9         
+ Min.   : 0.00000   Min.   : 0.0000   Min.   :  0.000   Min.   : 0.0000  
+ 1st Qu.: 0.00000   1st Qu.: 0.0000   1st Qu.:  0.000   1st Qu.: 0.0000  
+ Median : 0.00000   Median : 0.0000   Median :  0.000   Median : 0.0000  
+ Mean   : 0.06931   Mean   : 0.1101   Mean   :  0.742   Mean   : 0.6563  
+ 3rd Qu.: 0.00000   3rd Qu.: 0.0000   3rd Qu.:  0.000   3rd Qu.: 0.0000  
+ Max.   :30.00000   Max.   :30.0000   Max.   :100.000   Max.   :99.0000  
+     ANC15             TARGET_B      
+ Min.   : 0.00000   Min.   :0.00000  
+ 1st Qu.: 0.00000   1st Qu.:0.00000  
+ Median : 0.00000   Median :0.00000  
+ Mean   : 0.07771   Mean   :0.05091  
+ 3rd Qu.: 0.00000   3rd Qu.:0.00000  
+ Max.   :32.00000   Max.   :1.00000  
+ #we can use library(Hmsic) to check all variable in the data using describe()
+ #check distribution of Target_B & Target_D using pie chart
+response.percentage=round(100*prop.table(table(final_dataset$TARGET_B)),digits=1))
+
+   0    1 
+94.9  5.1 
+mylabels=paste("TARGET_B=", names(response.percentage),"\n",+ response.percentage,"%",sep=" ")
+pie(response.percentage, labels=mylabels)
+#data with positive donations, TARGET_D>0
+dataset_positive=final_dataset[final_dataset$TARGET_D>0,]
+target_positive=dataset_positive$TARGET_D
+summary(target_positive)
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 1.00   10.00   12.00   14.58   20.00  100.00 
+ boxplot(target_positive)
+ length(target_positive)
+[1] 509
+#number of positive donations not in whole dollars
+sum(!(target_positive %in% 1:200)) #$200 max amount
+[1] 5
+target_positive<-round (target_positive)
+barplot(table(target_positive), las=2)
+lm(TARGET_D ~ .,final_dataset[, !names(final_dataset) %in% c('TARGET_B')]) ##getting rid of variable TARGET_B before running regression model
+prediction=lm(TARGET_D~., datz=final_dataset) ##using all 30 variables that were initially selected
+predicted_y = fitted(prediction)
+actual_y = final_dataset$TARGET_D
+plot(predicted_y, actual_y)
+t.test(predicted_y, actual_y)
+
+	Welch Two Sample t-test
+
+data:  predicted_y and actual_y
+t = 0, df = 19374.43, p-value = 1
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.09818937  0.09818937
+sample estimates:
+mean of x mean of y 
+0.7419812 0.7419812 
+## computing CI for the dataset
+predict(prediction.lm, X,interval="confidence")
+install.packages('plotrix')
+plotCI(1:nrow(predictions), predictions[,1], ui=predictions[,2], li=predictions[,3])
+plotCI(1:nrow(predictions), predictions[,1], ui=predictions[,3], li=predictions[,2])
+#
+library(lsr)
+set.seed(45)
+=TARGET_D=final_dataset&TARGET_D
+TARGET_B=final_dataset&TARGET_B
+x=rnorm(TARGET_D)
+y=rnorm(TARET_B)
+cohensD(x,y)
+[1] 0.0004649306
