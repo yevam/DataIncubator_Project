@@ -18,7 +18,7 @@ By using a bar-plot, it is also possible to check the number of positive donatio
 
 In order to run a T-Test on my dataset I first decided to use regression and create a predicted model for my dataset and only then use T test to compare two groups (the actual and the predicted). Linear method of regression was used and TARGET_D was the response variable and the rest 30 features were the predicted variables. 
 
-![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Regression.jpeg)
+
 
 The results of my predicted model(predicted_y) in regards to actual_y showed that because of high variability of TARGET_D variable the plots were scattered into two groups; people who made $0 contribution and people whose donation was between $12 to $14- very similar to what the box plot had also predicted. With T tests I will try to measure the accuracy of my model in respect to the actual one.
 
@@ -28,4 +28,3 @@ After the prediction I ran a T test to compare my two groups and here are the re
 
 With the help of Confidence Intervals we can measure the error of our predicted model meaning what is the numerical range that our error falls in between. If we assume that our error  in the linear regression model is independent of x, and is normally distributed, with zero mean and constant variance, we should be able to construct a Confidence Interval- for a given value of X the interval estimate for the mean of the dependent variable, Y. By using the function predict.lm we are able to construct CIs for all of our rows(observations) in order to be able to compare the means of our actual and predicted models. Since I am moring with more than 2 rows, the display of CI was better usning a plot.Bellow are all the fitted values(X) and their confidence intervals plotted. 
 
-![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/CI.jpeg)
