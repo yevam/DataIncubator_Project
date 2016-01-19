@@ -1,4 +1,3 @@
-fial_Project
 final_dataset = feature_selection(dataset, 200)
 dim(final_dataset)
 [1] 9999   30
@@ -129,5 +128,3 @@ set.seed(45)
 TARGET_B=final_dataset&TARGET_B
 x=rnorm(TARGET_D)
 y=rnorm(TARET_B)
-cohensD(x,y)
-[1] 0.0004649306
