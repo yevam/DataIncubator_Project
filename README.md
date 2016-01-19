@@ -12,7 +12,7 @@ Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 
 From here we can see that the minimum donation amount was $1, maximum was $100,and $14.58 was the average amount donated by the participants who responded to the mail. The box plot bellow shows the donation $ distribution, the median amount for donations is less than $20, donations range from $1 to $200, data is skewed left, and the inter-quartile range falls between $15-20.    
 
- 
+![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Boxplot.jpeg)
 
 By using a bar-plot, it is also possible to check the number of positive donations. The plot shows that most donations are no more than $25 and are multiples of $5. 
  
