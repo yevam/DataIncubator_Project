@@ -11,11 +11,9 @@ Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 1.00   10.00   12.00   14.58   20.00  100.00
 
 From here we can see that the minimum donation amount was $1, maximum was $100,and $14.58 was the average amount donated by the participants who responded to the mail. The box plot bellow shows the donation $ distribution, the median amount for donations is less than $20, donations range from $1 to $200, data is skewed left, and the inter-quartile range falls between $15-20.    
-
 ![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Boxplot.jpeg)
-
 By using a bar-plot, it is also possible to check the number of positive donations. The plot shows that most donations are no more than $25 and are multiples of $5. 
- 
+![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Barplot.jpeg)
 In order to run a T-Test on my dataset I first decided to use regression and create a predicted model for my dataset and only then use T test to compare two groups (the actual and the predicted). Linear method of regression was used and TARGET_D was the response variable and the rest 30 features were the predicted variables. 
  
 The results of my predicted model(predicted_y) in regards to actual_y showed that because of high variability of TARGET_D variable the plots were scattered into two groups; people who made $0 contribution and people whose donation was between $12 to $14- very similar to what the box plot had also predicted. With T tests I will try to measure the accuracy of my model in respect to the actual one.
