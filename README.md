@@ -18,7 +18,7 @@ By using a bar-plot, it is also possible to check the number of positive donatio
 
 In order to run a T-Test on my dataset I first decided to use regression and create a predicted model for my dataset and only then use T test to compare two groups (the actual and the predicted). Linear method of regression was used and TARGET_D was the response variable and the rest 30 features were the predicted variables. 
 
-![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+
 
 The results of my predicted model(predicted_y) in regards to actual_y showed that because of high variability of TARGET_D variable the plots were scattered into two groups; people who made $0 contribution and people whose donation was between $12 to $14- very similar to what the box plot had also predicted. With T tests I will try to measure the accuracy of my model in respect to the actual one.
 
