@@ -15,7 +15,7 @@ From here we can see that the minimum donation amount was $1, maximum was $100,a
 By using a bar-plot, it is also possible to check the number of positive donations. The plot shows that most donations are no more than $25 and are multiples of $5. 
 ![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Barplot.jpeg)
 In order to run a T-Test on my dataset I first decided to use regression and create a predicted model for my dataset and only then use T test to compare two groups (the actual and the predicted). Linear method of regression was used and TARGET_D was the response variable and the rest 30 features were the predicted variables. 
- 
+![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/Regression.jpeg)
 The results of my predicted model(predicted_y) in regards to actual_y showed that because of high variability of TARGET_D variable the plots were scattered into two groups; people who made $0 contribution and people whose donation was between $12 to $14- very similar to what the box plot had also predicted. With T tests I will try to measure the accuracy of my model in respect to the actual one.
 
 Ho= true difference in means is equal to zero, Halt= true difference in means is not equal to zero. 
@@ -23,7 +23,5 @@ Ho= true difference in means is equal to zero, Halt= true difference in means is
 After the prediction I ran a T test to compare my two groups and here are the results: t=0, df=19374.43, p-value=1, since our P value is greater than zero we keep our hypothesis meaning the predicted model is quite accurate compared with the actual one. We are 95% confident that the error lies between -0.09818937& 0. 09818937 intervals. Our regression and T test showed us that instead of trying to estimate the return with the given dataset, it will be more accurate if try to compute if people will donate or not instead. Since the donations are only forming 5% of entire data, it can be more meaningful to work with the 95% trying to predict whether they will donate or not. 
 
 With the help of Confidence Intervals we can measure the error of our predicted model meaning what is the numerical range that our error falls in between. If we assume that our error  in the linear regression model is independent of x, and is normally distributed, with zero mean and constant variance, we should be able to construct a Confidence Interval- for a given value of X the interval estimate for the mean of the dependent variable, Y. By using the function predict.lm we are able to construct CIs for all of our rows(observations) in order to be able to compare the means of our actual and predicted models. Since I am moring with more than 2 rows, the display of CI was better usning a plot.Bellow are all the fitted values(X) and their confidence intervals plotted. 
- 
-
-I also used the pwr package  to estimate the power of a t-test with unequal variances and with  Cohen's d and got 0.0004649306. 
+![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/CI.jpeg)
 
