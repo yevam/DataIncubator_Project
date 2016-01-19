@@ -28,4 +28,4 @@ After the prediction I ran a T test to compare my two groups and here are the re
 
 With the help of Confidence Intervals we can measure the error of our predicted model meaning what is the numerical range that our error falls in between. If we assume that our error  in the linear regression model is independent of x, and is normally distributed, with zero mean and constant variance, we should be able to construct a Confidence Interval- for a given value of X the interval estimate for the mean of the dependent variable, Y. By using the function predict.lm we are able to construct CIs for all of our rows(observations) in order to be able to compare the means of our actual and predicted models. Since I am moring with more than 2 rows, the display of CI was better usning a plot.Bellow are all the fitted values(X) and their confidence intervals plotted. 
 
-
+![alt tag](https://raw.githubusercontent.com/yevam/KDD-project/master/images/CI.jpeg)
