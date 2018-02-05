@@ -1,5 +1,5 @@
-# KDD-project
-Customer Response Prediction and Profit Optimization
+#Data Incubator Project
+Direct Marketing Camapign targeting & ROI optimization through regression
 
 Research question: Estimate the return from direct mailing in order to maximize donation profits. For the purpose of doing feature selection in order to train a model I am using the notion of entropy. Entropy is a measure of disorder, features with low entropy express high variability and are better candidates. I have selected 30 features that have met this criteria. There are 2 target variables in the dataset TRGET_B=binary variable indicating if participants responded to the mail or not and TARGET_D= donation amount in $. 
 
